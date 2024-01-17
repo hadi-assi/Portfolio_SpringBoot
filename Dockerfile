@@ -8,7 +8,7 @@ RUN mvn clean package -DskipTests
 #
 # Package stage
 #
-FROM openjdk:21.0.1-jdk-slim
+FROM adoptopenjdk/openjdk21:alpine-jre
 COPY --from=build /target/protfolio-0.0.1-SNAPSHOT.jar protfolio.jar
 # ENV PORT=8080
 EXPOSE 8080
